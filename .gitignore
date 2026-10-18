@@ -1,0 +1,9 @@
+# NUNCA publique dumps/firmware: sao do fabricante e contem dados pessoais
+# (chaves de pareamento AirPlay/BT, nomes de aparelhos, configuracoes).
+*.bin
+*.img
+*.rom
+*.jpg.orig
+ex/
+out/
+__pycache__/
