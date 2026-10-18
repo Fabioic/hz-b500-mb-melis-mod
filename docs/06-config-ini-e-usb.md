@@ -18,8 +18,6 @@
 
 Há ainda senhas de fábrica no arquivo (`logoPassword`, `factoryPaswword`); são padrões do fabricante, **não** as inclua em issues públicas.
 
-## Atualização por pendrive (descoberta em strings; **ainda não testada**)
-O programa procura, no dispositivo USB/SD, a pasta `\Update\` com:
-- `Config.ini` (e `UI<n>\Config.ini`) → "UpdateConfig"; `stalogo.jpg` (logo); `gt911.cfg` (calibração do touch); `no_update_config` (marcador para não sobrescrever); `\Update\<arquivo>` genérico (cópia).
-- `appUpdateFile` (padrão **`LTTF133.img`**) e `mcuUpdateFile` (padrão `LTTMcu.bin`) — nomes configuráveis em `CONFIG.INI`.
-- O botão "Atualizar APP" usa `CarApi_CheckImage` + `update.mod`. O formato do `.img` ainda é desconhecido.
+## Atualização por pendrive
+Testada: veja [`10-atualizacao-usb-img.md`](10-atualizacao-usb-img.md) (`\Update\Config.ini` e `\Update\LTTF133.img` funcionam).
+Também existem `stalogo.jpg`, `gt911.cfg` e `UI<n>\Config.ini` (ainda não testados).

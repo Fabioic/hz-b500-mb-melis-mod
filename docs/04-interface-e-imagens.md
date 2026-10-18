@@ -1,6 +1,8 @@
 # 04 — Interface (`Main.data`) e imagens
 
-`/apps/UI2/Data/Main.data` contém **75 "arquivos" DATAV1.0** em sequência (assinatura `DATAV1.0` em UTF-16LE).
+> **Atenção:** a descrição abaixo foi corrigida nos docs 11 e 12 (são 71 arquivos `.data`, alfa do fmt 3 = 5 bits). A técnica de "mesmo tamanho" só é necessária para gravação in-place; com `LTTF133.img` pode-se realocar.
+
+`/apps/UI2/Data/*.data` — o conjunto contém **75 blocos DATAV1.0** (assinatura `DATAV1.0` em UTF-16LE).
 Cada um corresponde a uma tela/janela e tem:
 
 1. **Cabeçalho de layout** (UTF-16 + inteiros): nomes dos controles (`ViewShowWndVideoUi`, `ViewShowButtonDot`, `ViewShowSliderVolume2`…),
