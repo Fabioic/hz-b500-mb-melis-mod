@@ -9,3 +9,7 @@
 - [ ] Papéis de parede JPEG 1280×480 (slots), barra superior/fundos.
 - [ ] Reconexão automática do emissor Bluetooth KCX.
 - [ ] Outras placas/versões: compare offsets e envie correções.
+- [ ] Tela "APP Update...%(NNs)": texto vem da linha `升级中` do `Setup.txt` (formato `APP %c` + `%c...%d%%(%dS)` no módulo principal); barra e cores são desenhadas em código — patch ainda não feito.
+- [ ] Testar o logo de abertura sem firmware (pasta `Logo/` + código `112233`) e `btPairMode=1` (ver doc 13).
+- [ ] Recuperação por FEL (`xfel`) como alternativa ao CH341A.
+- [ ] Outras paletas de cores para o tema.

@@ -119,6 +119,17 @@ for k,ln in enumerate(lines):
 new='\r\n'.join(lines)
 print('Portugal ->',cnt)
 put(rs,new.encode('utf-16le'))
+# ---------- 3b) FM Transmit(ter) -> Transmissor FM ----------
+for nm in ('Main.txt','SystemBar.txt','Setup.txt'):
+    rr_=[r for r in recs if r['name']==nm][0]
+    tx=bytes(fw[R+rr_['off']:R+rr_['off']+rr_['size']]).decode('utf-16le'); ls=tx.split('\r\n'); n=0
+    for k,ln in enumerate(ls):
+        c=ln.split('\t')
+        if len(c)>20 and c[0]=='{' and c[1] in ('收音机','FM发射') and c[2].startswith('FM Transmit'):
+            for j in (10,16):
+                if c[j].startswith('FM Transmit'): c[j]='Transmissor FM'; n+=1
+            ls[k]='\t'.join(c)
+    put(rr_,'\r\n'.join(ls).encode('utf-16le')); print(nm,'FM ->',n)
 # ---------- superbloco ----------
 used=struct.unpack_from('<I',fw,R+0x18)[0]
 newused=used+(tail-A4(max(r['off']+r['size'] for r in recs if True) if False else 0)) if False else None

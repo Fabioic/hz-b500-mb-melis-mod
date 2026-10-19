@@ -19,7 +19,8 @@ vendida sob várias marcas genéricas.
 | Ícones/tiles estilo iOS e "CarPlay Dark" | recriar `.data` e realocar no ROOTFS (docs 11–12) | aplicado na central; refinamento em andamento |
 | Bolinha flutuante e menu de volume/home/desligar | idem | aplicado; quadrado atrás da bolinha em investigação |
 | Animações de transição | `animationType=1` no `CONFIG.INI` | **testado** (deslize suave) |
-| Nome "Português BR" na lista de idiomas | imagem 200×30 em `SetupLanguage.data` (doc 07) | em teste |
+| Nome "Português BR" na lista de idiomas e "Transmissor FM" | imagem 200×30 em `SetupLanguage.data` + tabelas de texto (doc 07) | aplicado |
+| Tema vibrante (ícones novos: rádio, fone, câmera, USB, link) | `examples/carplay_dark/` | aplicado e aprovado |
 
 ## Conteúdo
 
@@ -35,6 +36,7 @@ vendida sob várias marcas genéricas.
 - [`docs/10-atualizacao-usb-img.md`](docs/10-atualizacao-usb-img.md) — atualização por pendrive (`LTTF133.img`, `Config.ini`).
 - [`docs/11-minfs-dados-e-relocacao.md`](docs/11-minfs-dados-e-relocacao.md) — 71 arquivos `.data`, registros MINFS, realocação.
 - [`docs/12-imagens-fmt3-e-bolinha.md`](docs/12-imagens-fmt3-e-bolinha.md) — fmt 3 (alfa 5 bits), fmt 1, bolinha/painel.
+- [`docs/13-comunidade-e-referencias.md`](docs/13-comunidade-e-referencias.md) — outros projetos na mesma plataforma (Gamadril, dan-os, fuho…) e o que aprenderam.
 - [`tools/dataf.py`](tools/dataf.py), [`tools/build_img.py`](tools/build_img.py), [`examples/carplay_dark/`](examples/carplay_dark/) — reconstrução de `.data`, gerador do `.img`, pacote CarPlay Dark.
 - [`tools/fwtool.py`](tools/fwtool.py) — ferramenta única (info, ls, extract, ui-list/export/replace, mods, udisk).
 - [`examples/ios_icons.py`](examples/ios_icons.py) — gerador dos ícones estilo iOS usados nos testes.

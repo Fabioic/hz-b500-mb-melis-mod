@@ -1,13 +1,14 @@
 import numpy as np, math
 from PIL import Image, ImageDraw, ImageFilter
 from scipy.ndimage import distance_transform_edt as edt
-import icons
+import icons, glyphs2
 from icons import S, superellipse, gradient
 
 # ---- paleta (estilo iOS/CarPlay escuro) ----
 C={'blue':((64,156,255),(0,98,230)),'orange':((255,184,64),(255,120,10)),'teal':((84,220,232),(14,140,170)),
    'pink':((255,112,140),(222,28,84)),'green':((92,226,120),(30,168,70)),'red':((255,110,100),(228,40,50)),
    'gray':((176,176,186),(84,84,94)),'purple':((200,140,255),(124,70,226)),'cyan':((90,200,255),(10,110,225))}
+C.update({'orange':((255,176,70),(236,92,18)),'pink':((255,98,206),(214,26,138)),'green':((104,236,136),(26,166,88)),'blue':((86,150,255),(24,72,226)),'red':((255,112,104),(226,40,56)),'gray':((124,124,132),(50,50,58)),'purple':((196,88,236),(112,30,188)),'teal':((78,226,214),(10,140,160)),'cyan':((96,206,255),(14,112,230))})
 ACCENT={k:v[0] for k,v in C.items()}
 
 def squircle(top,bot,glyph,size):
@@ -82,11 +83,12 @@ def tile(key,glyph,w=204,h=300,radius=30,isize=116,cy=0.40,selected=False):
     return base.resize((w,h),Image.LANCZOS)
 
 # ---------- glifos extras ----------
-GL=dict(globe=icons.g_globe,fm=icons.g_tower2,link=icons.g_multi,btm=icons.g_headset,phone=icons.g_phone)
+_w=glyphs2.wrap
+GL=dict(globe=icons.g_globe,fm=glyphs2.g_radio,link=glyphs2.g_link2,btm=_w(icons.g_headset),phone=glyphs2.g_phone2)
 SMALL={ # indice normal -> (cor, glifo)
- 4:('red',icons.g_usb),6:('blue',icons.g_sd),8:('gray',icons.g_plug),10:('orange',icons.g_clock),
- 12:('purple',icons.g_eq),14:('teal',icons.g_photo),18:('green',icons.g_multi),20:('cyan',icons.g_dashcam),
- 22:('pink',icons.g_btmusic),24:('gray',icons.g_gear)}
+ 4:('red',glyphs2.g_usb2),6:('blue',_w(icons.g_sd)),8:('gray',glyphs2.g_camera2),10:('orange',_w(icons.g_clock)),
+ 12:('purple',_w(icons.g_eq)),14:('teal',_w(icons.g_photo)),18:('green',glyphs2.g_link2),20:('cyan',_w(icons.g_dashcam)),
+ 22:('pink',_w(icons.g_btmusic)),24:('gray',_w(icons.g_gear))}
 TILES={0:('blue','globe',dict(isize=72,cy=0.19)),2:('orange','fm',dict(w=205,h=301)),26:('teal','link',{}),28:('pink','btm',{}),30:('green','phone',{})}
 
 def build_file14():
